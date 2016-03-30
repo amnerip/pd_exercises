@@ -1,0 +1,15 @@
+#N canvas 0 51 721 715 10;
+#X obj 51 20 bpm2ms;
+#X text 113 22 - BPM to ms converter;
+#X text 29 49 Given a BPM value \, the outlet returns a time interval
+in milliseconds. The initial BPM is set through the first creation
+argument \, although it may be overriden through the right inlet. This
+is a cold inlet \, so the output will not change immediately. To cause
+the change you must pass a bang to the left inlet.;
+#X floatatom 38 213 5 0 0 0 - - -, f 5;
+#X msg 38 160 bang;
+#X floatatom 91 159 5 0 0 0 - - -, f 5;
+#X obj 38 186 bpm2ms 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 1;
+#X connect 6 0 3 0;

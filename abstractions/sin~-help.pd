@@ -1,0 +1,24 @@
+#N canvas 0 51 721 715 10;
+#X floatatom 41 88 5 0 0 0 - - -, f 5;
+#X obj 41 114 * 0.01;
+#X obj 130 160 metro 500;
+#X obj 130 132 r metro;
+#X obj 41 167 sin~;
+#X msg 362 126 \; pd dsp 1 \; metro 1;
+#X text 164 19 THE ANALOGOUS SINE WAVE GENERATOR;
+#X obj 41 138 sig~;
+#X obj 40 194 snapshot~;
+#X floatatom 40 221 5 0 0 0 - - -, f 5;
+#X msg 375 187 \; metro 0;
+#X obj 115 18 sin~;
+#X text 455 140 Turn the metronome on.;
+#X text 454 189 Turn the metronome off.;
+#X text 47 47 The sin~ object computes the sin of 2 pi times its input
+signal.;
+#X connect 0 0 1 0;
+#X connect 1 0 7 0;
+#X connect 2 0 8 0;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 7 0 4 0;
+#X connect 8 0 9 0;
